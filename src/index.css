@@ -19,7 +19,7 @@ body {
         "withdrawn graph";
         background-color: #000;
         color: #fff;
-        height: 50%;
+        height: 45%;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
     }
@@ -131,7 +131,9 @@ body {
 
     .item-list__text {
         grid-area: item-list__text;
-        margin: 30px;
+        margin: 0 30px;
+        display: flex;
+        align-items: center;
     }
 
     .item-list__available-items { grid-area: item-list__available-items; }

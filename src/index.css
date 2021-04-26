@@ -1,13 +1,138 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    background-color: rgb(36, 35, 35);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Media queries for iPhone6/7/8 Plus */
+@media only screen and (min-device-width : 414px) and (max-device-width : 736px) {
+    .container { height: 736px; }
+
+    .summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "logo menu"
+        "product-items graph"
+        "deposited graph"
+        "withdrawn graph";
+        background-color: #000;
+        color: #fff;
+        height: 50%;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+
+    .item-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+        "text text"
+        "available-items information-one"
+        "images images";
+        height: 50%;
+    }
+
+    .logo {
+        grid-area: logo;
+        margin: 30px 0 0 30px;
+    }
+    .logo__letter {
+        color: #000;
+        background-color: rgb(235, 130, 11);
+        padding: 10px;
+        display: inline-block;
+        border-radius: 5px;
+    }
+
+    .menu {
+        grid-area: menu;
+        margin: 20px 30px 0;
+    }
+
+    /* Hide Hamburger */
+    .menu__label, .menu__icon {
+        display: none;
+        position: absolute;
+    }
+
+    /* Horizontal Menu Items */
+    .menu__items {
+        display: flex;
+        position: absolute;
+        top: 70px;
+        background-color: #000;
+    }
+    .menu__items a {
+        width: 20%; /* 100% / 5 tabs = 20% */
+        padding: 10px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    /* Show Hamburger Icon */
+    .menu__nav label { 
+        display: inline-block; 
+        color: rgb(235, 130, 11);
+        font-style: normal;
+        font-size: 1.5em;
+        right: 30px;
+    }
+
+    /* Break down menu items into vertical */
+    .menu__items a {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border-top: 1px solid #333;
+    }
+
+    /* Toggle Show/Hide Menu */
+    .menu__items { display: none; right: 30px; }
+    .menu__nav input:checked ~ .menu__items { display: inline-block; }
+
+    .product-items {
+        grid-area: product-items;
+        margin: 30px 0 0 30px;
+    }
+
+    .deposited {
+        grid-area: deposited;
+        margin: 0 0 0 30px;
+    }
+    .deposited__title { color: rgb(235, 130, 11); }
+
+    .withdrawn {
+        grid-area: withdrawn;
+        margin: -30px 0 0 30px;
+    }
+    .withdrawn__title { color: rgb(230, 10, 10); }
+
+    .graph {
+        grid-area: graph;
+        margin: 30px auto 0;
+    }
+    .graph__image {
+        --v: calc( ((18/5) * var(--p) - 90)*1deg);
+      
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+        border-radius: 50%;
+        background:
+          linear-gradient(var(--v), rgb(235, 130, 11) 50%,transparent 0) 0 / calc((1 - var(--s))*100%),
+          linear-gradient(var(--v), transparent 50%,rgb(230, 10, 10) 0) 0 / calc(var(--s)*100%),
+          linear-gradient(to right, rgb(235, 130, 11) 50%,rgb(230, 10, 10) 0);
+    }
+
+    .text { grid-area: text; }
+
+    .available-items { grid-area: available-items; }
+
+    .information-one { grid-area: information-one; }
+
+    .images { grid-area: images; }
 }

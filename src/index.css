@@ -29,9 +29,9 @@ body {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
-        "text text"
-        "available-items information-one"
-        "images images";
+        "item-list__text item-list__text"
+        "item-list__available-items item-list__information-one"
+        "item-list__images item-list__images";
         height: 50%;
     }
 
@@ -128,11 +128,11 @@ body {
           linear-gradient(to right, rgb(235, 130, 11) 50%,rgb(230, 10, 10) 0);
     }
 
-    .text { grid-area: text; }
+    .item-list__text { grid-area: item-list__text; }
 
-    .available-items { grid-area: available-items; }
+    .item-list__available-items { grid-area: item-list__available-items; }
 
-    .information-one { grid-area: information-one; }
+    .item-list__information-one { grid-area: item-list__information-one; }
 
-    .images { grid-area: images; }
+    .item-list__images { grid-area: item-list__images; }
 }

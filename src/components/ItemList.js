@@ -2,8 +2,11 @@ import React from 'react'
 
 const ItemList = () => {
   return (
-    <div>
-        List
+    <div className='item-list'>
+      <div className='text'>text</div>
+      <div className='available-items'>available</div>
+      <div className='information-one'>info one</div>
+      <div className='images'>images</div>
     </div>
   )
 }

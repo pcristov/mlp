@@ -14,8 +14,11 @@ body {
         grid-template-rows: 1fr;
         grid-template-areas:
         "logo menu";
-        background-color: #000;
         color: #fff;
+    }
+
+    .header, .summary {
+        background-color: #000;
     }
 
     .logo {
@@ -85,7 +88,6 @@ body {
         "product-items graph"
         "deposited graph"
         "withdrawn graph";
-        background-color: #000;
         color: #fff;
         height: 35%;
         padding-top: 15px;
@@ -130,7 +132,7 @@ body {
     .item-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
         grid-template-areas:
         "item-list__text item-list__text"
         "item-list__available-items item-list__information-one"
@@ -174,8 +176,16 @@ body {
 
     .item-list__images {
         grid-area: item-list__images;
+        margin: -10px 20px;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: auto;
+    }
+
+    .item-list__image {
+        width: 150px;
+        height: 190px;
+        padding: 0 5px;
     }
 }

@@ -8,11 +8,11 @@ const Summary = () => {
         <div>Summary</div>
       </div>
       <div className='deposited'>
-        <div className='deposited__title'>Deposited</div>
+        <div className='deposited__text'>Deposited</div>
         <div>$2500.00</div>
       </div>
       <div className='withdrawn'>
-        <div className='withdrawn__title'>Withdrawn</div>
+        <div className='withdrawn__text'>Withdrawn</div>
         <div>$700.00</div>
       </div>
       <div className='graph'>

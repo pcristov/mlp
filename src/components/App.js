@@ -7,27 +7,23 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true)
   let [images, setImages] = useState([])
 
-  function fakeRequest() {
-    return new Promise(resolve => setTimeout(() => resolve(), 2500))
-  }
-
+  // Hook to hide Loading... once DOM is ready
   useEffect(() => {
-    fakeRequest().then(() => {
-      const loader = document.querySelector('.loader-container')
-      if (loader) {
-        loader.remove()
-        setIsLoading(!isLoading)
-      }
-    })
-  })
+    const loader = document.querySelector('.loader-container')
+    if(loader) {
+      loader.remove()
+      setIsLoading(!isLoading)
+    }
+  }, [])
 
+  // Asynchronously fetch images
   useEffect(() => {
     fetch('http://jsonplaceholder.typicode.com/photos?_page=1&_limit=6')
       .then(response => response.json())
       .then(data => setImages(data))
   }, [])
 
-  if (isLoading) {
+  if(isLoading) {
     return null
   }
 

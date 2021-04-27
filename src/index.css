@@ -8,20 +8,14 @@ body {
 @media only screen and (min-device-width : 414px) and (max-device-width : 736px) {
     .container { height: 736px; }
 
-    .summary {
+    .header {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
         grid-template-areas:
-        "logo menu"
-        "product-items graph"
-        "deposited graph"
-        "withdrawn graph";
+        "logo menu";
         background-color: #000;
         color: #fff;
-        height: 45%;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
     }
 
     .logo {
@@ -83,6 +77,22 @@ body {
     .menu__items { display: none; right: 30px; }
     .menu__nav input:checked ~ .menu__items { display: inline-block; }
 
+    .summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+        "product-items graph"
+        "deposited graph"
+        "withdrawn graph";
+        background-color: #000;
+        color: #fff;
+        height: 35%;
+        padding-top: 15px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+
     .product-items {
         grid-area: product-items;
         margin: 30px 0 0 30px;
@@ -90,7 +100,7 @@ body {
 
     .deposited {
         grid-area: deposited;
-        margin: 0 0 0 30px;
+        margin: 5px 0 0 30px;
     }
     .deposited__title { color: rgb(235, 130, 11); }
 

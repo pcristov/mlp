@@ -8,6 +8,7 @@ body {
 @media only screen and (min-device-width : 414px) and (max-device-width : 736px) {
     .container { height: 736px; }
 
+    /* Includes logo T and hamburger menu */
     .header {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -38,13 +39,13 @@ body {
         margin: 20px 30px 0;
     }
 
-    /* Hide Hamburger */
+    /* Hide hamburger */
     .menu__label, .menu__icon {
         display: none;
         position: absolute;
     }
 
-    /* Horizontal Menu Items */
+    /* Horizontal menu items */
     .menu__items {
         display: flex;
         position: absolute;
@@ -52,14 +53,14 @@ body {
         background-color: #000;
     }
     .menu__items a {
-        width: 20%; /* 100% / 5 tabs = 20% */
+        width: 20%;
         padding: 10px;
         color: #fff;
         text-decoration: none;
         text-align: center;
     }
 
-    /* Show Hamburger Icon */
+    /* Show hamburger icon */
     .menu__nav label { 
         display: inline-block; 
         color: rgb(235, 130, 11);
@@ -76,10 +77,11 @@ body {
         border-top: 1px solid #333;
     }
 
-    /* Toggle Show/Hide Menu */
+    /* Toggle show/hide menu */
     .menu__items { display: none; right: 30px; }
     .menu__nav input:checked ~ .menu__items { display: inline-block; }
 
+    /* Includes deposited and withdrawn amounts, and graph */
     .summary {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -104,13 +106,13 @@ body {
         grid-area: deposited;
         margin: 5px 0 0 30px;
     }
-    .deposited__title { color: rgb(235, 130, 11); }
+    .deposited__text { color: rgb(235, 130, 11); }
 
     .withdrawn {
         grid-area: withdrawn;
         margin: -30px 0 0 30px;
     }
-    .withdrawn__title { color: rgb(230, 10, 10); }
+    .withdrawn__text { color: rgb(230, 10, 10); }
 
     .graph {
         grid-area: graph;
@@ -129,10 +131,11 @@ body {
           linear-gradient(to right, rgb(235, 130, 11) 50%,rgb(230, 10, 10) 0);
     }
 
+    /* Bottom half of the interface, includes lorem ipsum text, tabs, and item images */
     .item-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: auto 1fr 1fr;
         grid-template-areas:
         "item-list__text item-list__text"
         "item-list__available-items item-list__information-one"
@@ -161,10 +164,12 @@ body {
         align-items: center;
     }
 
+    /* Underline selected tab */
     .item-list--selected {
         box-shadow: inset 0 -2px 0 rgb(235, 130, 11);
     }
 
+    /* Display vertical separator between tabs */
     .item-list__available-items:after {
         content: '';
         position: absolute;
@@ -176,16 +181,15 @@ body {
 
     .item-list__images {
         grid-area: item-list__images;
-        margin: -10px 20px;
         display: flex;
-        justify-content: center;
-        align-items: center;
         overflow: auto;
+        height: 150px;
+        margin: -35px 45px;
     }
 
     .item-list__image {
         width: 150px;
-        height: 190px;
+        height: 150px;
         padding: 0 5px;
     }
 }

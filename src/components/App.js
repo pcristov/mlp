@@ -5,6 +5,7 @@ import ItemList from './ItemList'
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
+  let [images, setImages] = useState([])
 
   function fakeRequest() {
     return new Promise(resolve => setTimeout(() => resolve(), 2500))
@@ -12,12 +13,18 @@ const App = () => {
 
   useEffect(() => {
     fakeRequest().then(() => {
-      const el = document.querySelector('.loader-container')
-      if (el) {
-        el.remove()
+      const loader = document.querySelector('.loader-container')
+      if (loader) {
+        loader.remove()
         setIsLoading(!isLoading)
       }
     })
+  })
+
+  useEffect(() => {
+    fetch('http://jsonplaceholder.typicode.com/photos?_page=1&_limit=6')
+      .then(response => response.json())
+      .then(data => setImages(data))
   }, [])
 
   if (isLoading) {
@@ -28,7 +35,7 @@ const App = () => {
     <div className='container'>
       <Header />
       <Summary />
-      <ItemList />
+      <ItemList images={ images } />
     </div>
   )
 }

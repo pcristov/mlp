@@ -110,9 +110,11 @@ body {
 
     .withdrawn {
         grid-area: withdrawn;
-        margin: -30px 0 0 30px;
+        margin: -15px 0 0 30px;
     }
     .withdrawn__text { color: rgb(230, 10, 10); }
+
+    .deposited__text, .withdrawn__text { margin-bottom: 7px; } 
 
     .graph {
         grid-area: graph;

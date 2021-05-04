@@ -155,7 +155,10 @@ body {
         align-items: center;
     }
 
-    .item-list__available-items { grid-area: item-list__available-items; }
+    .item-list__available-items {
+        grid-area: item-list__available-items;
+        font-weight: bold;
+    }
 
     .item-list__information-one { grid-area: item-list__information-one; }
 

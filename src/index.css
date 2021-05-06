@@ -146,7 +146,7 @@ body {
         grid-template-areas:
         "item-list__text item-list__text"
         "item-list__available-items item-list__information-one"
-        "item-list__images item-list__images";
+        "item-list__slider item-list__slider";
         height: 50%;
         color: rgb(245 245 220);
     }
@@ -168,7 +168,7 @@ body {
     .item-list__available-items, .item-list__information-one {
         position: relative;
         background-color: rgb(68, 67, 67);
-        height: 45%;
+        height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -187,19 +187,5 @@ body {
         top: 25%;
         height: 50%;
         border-right: 1px solid rgb(87, 86, 86);
-      }
-
-    .item-list__images {
-        grid-area: item-list__images;
-        display: flex;
-        overflow: auto;
-        height: 150px;
-        margin: -35px 45px;
-    }
-
-    .item-list__image {
-        width: 150px;
-        height: 150px;
-        padding: 0 5px;
     }
 }

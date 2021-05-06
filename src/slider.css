@@ -1,0 +1,35 @@
+.slider {
+    grid-area: item-list__slider;
+    position: relative;
+    height: 220px;
+    width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slider__slider-content {
+    transform: translateX(var(--translate));
+    transition: transform ease-out var(--transition);
+    height: 100%;
+    width: var(--width);
+    display: flex;
+}
+
+.slider__slide {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider__arrow {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    height: 0;
+    width: 30px;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+}
